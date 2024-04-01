@@ -87,21 +87,21 @@ const SkillView = () => {
       ]
     
   return (
-    <>
+    <div>
     <TypeSkills/>
-    <div className='flex justify-around'>
+    <div className='flex justify-around flex-wrap'>
     <div className="flex flex-col items-center justify-center h-[15rem]  ">
-      <h1 className='text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center'>Frontend</h1>
+      <h1 className='text-5xl font-bold text-center'>Frontend</h1>
     <Skills skills={frontendSkills}/>
     </div>
     <div className="flex flex-col items-center justify-center h-[15rem]  ">
-      <h1 className='text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center'>Backend</h1>
+      <h1 className='text-5xl font-bold text-center'>Backend</h1>
     <Skills skills={backendSkills}/>
     </div>
 
     </div>
 
-    </>
+    </div>
   )
 }
 
