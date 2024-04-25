@@ -4,10 +4,14 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import Link from "next/link"
 
 export const HeroParallax = ({ products }) => {
-    
-  const firstRow = products.slice(0, 5)
-  const secondRow = products.slice(5, 10)
-  const thirdRow = products.slice(10, 15)
+
+  const firstRow = products.slice(0, 4)
+  const secondRow = products.slice(4, 8)
+  const thirdRow = products.slice(8, 12)
+  //original
+  // const firstRow = products.slice(0, 5)
+  // const secondRow = products.slice(5, 10)
+  // const thirdRow = products.slice(10, 15)
   const ref = React.useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -43,7 +47,7 @@ export const HeroParallax = ({ products }) => {
   return (
     <div
       ref={ref}
-      className="h-[150vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[180vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -64,7 +68,7 @@ export const HeroParallax = ({ products }) => {
             />
           ))}
         </motion.div>
-        {/* <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row  mb-20 space-x-20 ">
           {secondRow.map(product => (
             <ProductCard
               product={product}
@@ -72,7 +76,7 @@ export const HeroParallax = ({ products }) => {
               key={product.title}
             />
           ))}
-        </motion.div> */}
+        </motion.div>
         {/* <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
           {thirdRow.map(product => (
             <ProductCard
@@ -94,11 +98,11 @@ export const Header = () => {
         Fawad Khan <br /> MERN Stack Developer
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-      Aspiring to leverage my skills in the MERN stack (MongoDB, Express.js, React, Node.js) within a vibrant team setting.
-       With a solid foundation in React and an intermediate grasp of Node.js, 
-       I'm keen on contributing effectively to web development projects. 
-       My goal is to deepen my full-stack development knowledge, sharpen my problem-solving abilities, and drive success for forward-thinking organizations through practical development work. 
-      Eager for opportunities that will enable me to enhance my proficiency in the MERN stack, collaborate with skilled professionals, and tackle challenging web projects.
+        Aspiring to leverage my skills in the MERN stack (MongoDB, Express.js, React, Node.js) within a vibrant team setting.
+        With a solid foundation in React and an intermediate grasp of Node.js,
+        I'm keen on contributing effectively to web development projects.
+        My goal is to deepen my full-stack development knowledge, sharpen my problem-solving abilities, and drive success for forward-thinking organizations through practical development work.
+        Eager for opportunities that will enable me to enhance my proficiency in the MERN stack, collaborate with skilled professionals, and tackle challenging web projects.
       </p>
     </div>
   )
@@ -114,15 +118,15 @@ export const ProductCard = ({ product, translate }) => {
         y: -20
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-96 w-[42rem] relative flex-shrink-0"
     >
-        <img
-          src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-contain  absolute h-full w-full inset-0"
-          alt={product.title}
-        />
+      <img
+        src={product.thumbnail}
+        height="600"
+        width="600"
+        className="object-contain  absolute h-full w-full inset-0"
+        alt={product.title}
+      />
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}

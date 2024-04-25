@@ -19,7 +19,7 @@ export const LayoutGrid = ({ cards }) => {
   }
 
   return (
-    <div className="relative w-full h-full p-10 grid grid-cols-1 md:grid-cols-3   mx gap-4 ">
+    <div className="relative w-full h-full p-10 grid grid-cols-1 md:grid-cols-6   mx gap-4 ">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
@@ -30,8 +30,8 @@ export const LayoutGrid = ({ cards }) => {
               selected?.id === card.id
                 ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
-                ? "z-40 bg-white rounded-xl h-full w-full"
-                : "bg-white rounded-xl h-full w-full"
+                  ? "z-40 bg-white rounded-xl h-full w-full"
+                  : "bg-white rounded-xl h-full w-full"
             )}
             layout
           >
