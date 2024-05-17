@@ -3,103 +3,103 @@ import React from 'react'
 import { TypeSkills } from './typeSkills'
 
 const SkillView = () => {
-    const frontendSkills = [
-        {
-          id: 1,
-          name: "HTML",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/html-1.svg"
-        },
-        {
-          id: 2,
-          name: "CSS",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/css-3.svg"
-        },
-        {
-          id: 3,
-          name: "JavaScript",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg"
-        },
-        {
-          id: 4,
-          name: "TypeScript",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/typescript.svg"
-        },
-        {
-          id: 5,
-          name: "React.js",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/react-2.svg"
-        },
-        {
-          id: 6,
-          name: "Redux",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/redux.svg"
-        },
-        {
-          id: 7,
-          name: "Next.js",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/next-js.svg"
-        }
-      ]
-    const backendSkills = [
-        {
-          id: 1,
-          name: "Node.js",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg"
-        },
-        {
-          id: 2,
-          name: "Express.js",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/express-109.svg"
-        },
-        {
-          id: 3,
-          name: "JavaScript",
-          image:
-          "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg"
-        },
-        {
-          id: 4,
-          name: "Python",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/python-5.svg"
-        },
-        {
-          id: 5,
-          name: "MongoDB",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"
-        },
-        {
-          id: 6,
-          name: "SQL",
-          image:
-            "https://cdn.worldvectorlogo.com/logos/amazon-database.svg"
-        }
-      ]
-    
-  return (
-    <div>
-    <TypeSkills/>
-    <div className='flex justify-around flex-wrap'>
-    <div className="flex flex-col items-center justify-center h-[15rem]  ">
-      <h1 className='text-5xl font-bold text-center'>Frontend</h1>
-    <Skills skills={frontendSkills}/>
-    </div>
-    <div className="flex flex-col items-center justify-center h-[15rem]  ">
-      <h1 className='text-5xl font-bold text-center'>Backend</h1>
-    <Skills skills={backendSkills}/>
-    </div>
+  const frontendSkills = [
+    {
+      id: 1,
+      name: "HTML",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/html-1.svg"
+    },
+    {
+      id: 2,
+      name: "CSS",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/css-3.svg"
+    },
+    {
+      id: 3,
+      name: "JavaScript",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg"
+    },
+    {
+      id: 4,
+      name: "TypeScript",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/typescript.svg"
+    },
+    {
+      id: 5,
+      name: "React.js",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/react-2.svg"
+    },
+    {
+      id: 6,
+      name: "Redux",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/redux.svg"
+    },
+    {
+      id: 7,
+      name: "Next.js",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/next-js.svg"
+    }
+  ]
+  const backendSkills = [
+    {
+      id: 1,
+      name: "Node.js",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg"
+    },
+    {
+      id: 2,
+      name: "Express.js",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/express-109.svg"
+    },
+    {
+      id: 3,
+      name: "JavaScript",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg"
+    },
+    {
+      id: 4,
+      name: "Python",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/python-5.svg"
+    },
+    {
+      id: 5,
+      name: "MongoDB",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"
+    },
+    {
+      id: 6,
+      name: "SQL",
+      image:
+        "https://cdn.worldvectorlogo.com/logos/amazon-database.svg"
+    }
+  ]
 
-    </div>
+  return (
+    <div className=''>
+      <TypeSkills />
+      <div className='flex flex-col items-center sm:flex-row justify-center sm:items-center sm:justify-center'>
+        <div className="flex flex-col items-center justify-center h-[40rem] w-full  sm:h-[15rem] sm:w-[50%]  sm:mb-0">
+          <h1 className='text-5xl font-bold text-center'>Frontend</h1>
+          <Skills skills={frontendSkills} />
+        </div>
+        <div className="flex flex-col items-center justify-center h-[40rem] w-full  sm:h-[15rem] sm:w-[50%] sm:mb-0">
+          <h1 className='text-5xl font-bold text-center'>Backend</h1>
+          <Skills skills={backendSkills} />
+        </div>
+      </div>
+
 
     </div>
   )

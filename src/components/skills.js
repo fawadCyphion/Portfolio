@@ -12,12 +12,12 @@ import {
 import { useState } from "react"
 
 
-const Skills = ({skills}) => {
+const Skills = ({ skills }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
   const springConfig = { stiffness: 100, damping: 5 }
 
-  const x = useMotionValue(0) 
+  const x = useMotionValue(0)
 
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
@@ -31,16 +31,16 @@ const Skills = ({skills}) => {
 
   const handleMouseMove = event => {
     const halfWidth = event.target.offsetWidth / 2
-    x.set(event.nativeEvent.offsetX - halfWidth) 
+    x.set(event.nativeEvent.offsetX - halfWidth)
   }
 
-  
+
 
   return (
-    <div className="flex flex-row items-center justify-center gap-5 mb-10 w-full mt-10">
+    <div className="flex flex-col h-fit items-center justify-center my-4 sm:flex-row sm:mb-10 sm:w-full sm:mt-10">
       {skills.map((testimonial, idx) => (
         <div
-          className="-mr-4  relative group"
+          className="relative group w-auto"
           key={testimonial.name}
           onMouseEnter={() => setHoveredIndex(testimonial.id)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -72,18 +72,18 @@ const Skills = ({skills}) => {
                 <div className="font-bold text-white relative z-30 text-base">
                   {testimonial.name}
                 </div>
-                
+
               </motion.div>
             )}
           </AnimatePresence>
           <Image
-  onMouseMove={handleMouseMove}
-  height={100}
-  width={100}
-  src={testimonial.image}
-  alt={testimonial.name}
-  className="object-contain !m-0 !p-2 object-center rounded-full h-20 w-20 border-2 group-hover:scale-105 group-hover:z-30 border-white relative transition duration-500"
-/>
+            onMouseMove={handleMouseMove}
+            height={100}
+            width={100}
+            src={testimonial.image}
+            alt={testimonial.name}
+            className="object-contain !m-0 !p-2 object-center rounded-full h-20 w-20 border-2 group-hover:scale-105 group-hover:z-30 border-white relative transition duration-500"
+          />
         </div>
       ))}
     </div>
